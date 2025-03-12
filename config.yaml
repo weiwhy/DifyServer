@@ -1,0 +1,11 @@
+database:
+  host: "x.x.x.x"
+  port: 5432
+  user: "postgres"
+  password: "difyai123456"
+  dbname: "dify"
+
+admins:
+  - "admin1@example.com"
+  - "admin2@example.com"
+  - "admin3@example.com"
