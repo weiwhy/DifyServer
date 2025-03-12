@@ -1,30 +1,35 @@
-# 简介
+# DifyServer
 
-用来管理Dify多个用户空间和用户之间的权限
+DifyServer 是一个用于管理 Dify 多租户和用户权限的管理系统。它提供了用户管理、工作空间管理、权限控制等功能。
 
-- 用户的增加，删除，修改密码
-- 空间的增加，删除
-- 用户和空间之间的关联关系
-- 知识库展示，不含管理
+## 功能特点
 
-# 截图
+- 用户管理：创建、删除用户，修改密码
+- 工作空间管理：创建和管理多个工作空间
+- 权限控制：管理用户与工作空间的关联关系
+- 知识库展示：查看各工作空间的知识库
 
-![img.png](img.png)
+## 技术栈
 
-# 代码部分
+- 后端：Go + Gin + GORM
+- 前端：React + TypeScript + Ant Design
+- 数据库：PostgreSQL
 
-- main.go程序的主入口点
-- frontend是前端代码，运行npm run build进行编译
-- config.yaml程序配置文件，指定dify应用的Postgre数据库信息，和指定可以登录该程序的Dify用户的邮箱地址
+## 快速开始
 
-# 使用方法
+### 配置
 
-直接下载release后解压
+创建 `config.yaml` 文件：
 
-修改config.yaml中关于数据库的部分
+```yaml
+database:
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "your_password"
+  dbname: "dify"
 
-如果使用docker容器部署的dify，密码部分在dify/docker/.env文件中
-
-host的值可以直接使用容器的宿主机地址
-
-![img_1.png](img_1.png)
+admins:
+  - "admin@example.com"
+  - "another_admin@example.com"
+```
