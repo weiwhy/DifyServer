@@ -85,11 +85,11 @@ jobs:
 
       - name: Create release package
         run: |
-          mkdir -p release
-          cp difyserver release/
-          cp -r frontend/build release/frontend/build
-          cp config.yaml release/config.yaml
-          cd release && tar -czf difyserver-linux-amd64.tar.gz *
+          mkdir -p release/difyserver
+          cp difyserver release/difyserver/
+          cp -r frontend/build release/difyserver/frontend/build
+          cp config.yaml release/difyserver/config.yaml
+          cd release/difyserver && tar -czf difyserver-linux-amd64.tar.gz *
           
       - name: Create Release
         uses: softprops/action-gh-release@v1
