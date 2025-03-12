@@ -65,3 +65,15 @@ npm run build
 ```bash
 go build
  ```
+
+## 截图
+
+![](img.png)
+
+![](img_1.png)
+
+## 许可证
+MIT License
+
+## 贡献
+欢迎提交 Issue 和 Pull Request！
