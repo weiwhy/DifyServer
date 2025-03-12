@@ -33,3 +33,35 @@ admins:
   - "admin@example.com"
   - "another_admin@example.com"
 ```
+
+### 运行
+1. 从 Releases 下载最新版本
+2. 解压下载的文件
+3. 修改 config.yaml 配置文件
+4. 运行可执行文件：
+   - Windows: difyserver.exe
+   - Linux: ./difyserver
+### 开发环境搭建
+
+1. 克隆仓库：
+```bash
+git clone https://github.com/weiwhy/DifyServer.git
+ ```
+
+2. 安装前端依赖：
+
+```bash
+cd frontend
+npm install
+ ```
+
+3. 构建前端：
+4. 
+```bash
+npm run build
+ ```
+
+4. 编译后端：
+```bash
+go build
+ ```
