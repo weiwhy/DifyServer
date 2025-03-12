@@ -30,12 +30,12 @@ func main() {
 		AllowCredentials: true,
 	}))
 	// 静态文件服务
-	r.Static("/static", "./frontend/static")
-	r.StaticFile("/favicon.ico", "./frontend/favicon.ico")
-	r.StaticFile("/logo192.png", "./frontend/logo192.png")
+	r.Static("/static", "./frontend/build/static")
+	r.StaticFile("/favicon.ico", "./frontend/build/favicon.ico")
+	r.StaticFile("/logo192.png", "./frontend/build/logo192.png")
 	// 处理前端路由
 	r.NoRoute(func(c *gin.Context) {
-		c.File("./frontend/index.html")
+		c.File("./frontend/build/index.html")
 	})
 	// API 路由...
 	r.POST("/api/login.json", handlers.Login)

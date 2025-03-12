@@ -87,7 +87,7 @@ jobs:
         run: |
           mkdir -p release
           cp difyserver release/
-          cp -r frontend/build release/frontend/
+          cp -r frontend/build release/frontend/build
           cp config.yaml release/config.yaml
           cd release && tar -czf difyserver-linux-amd64.tar.gz *
           
