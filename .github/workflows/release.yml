@@ -42,14 +42,13 @@ jobs:
           copy difyserver.exe release\
           xcopy /E /I frontend\build release\frontend\build
           copy config.yaml release\config.yaml
+          powershell Compress-Archive -Path release\* -DestinationPath release\difyserver-windows-amd64.zip
           
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            release/difyserver.exe
-            release/config.yaml
-            release/frontend/build/**/*
+            release/difyserver-windows-amd64.zip
           draft: false
           prerelease: false
         env:
