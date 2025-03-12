@@ -38,11 +38,11 @@ jobs:
 
       - name: Create release package
         run: |
-          mkdir release
-          copy difyserver.exe release\
-          xcopy /E /I frontend\build release\frontend\build
-          copy config.yaml release\config.yaml
-          powershell Compress-Archive -Path release\* -DestinationPath release\difyserver-windows-amd64.zip
+          mkdir release\difyserver\frontend\build\
+          copy difyserver.exe release\difyserver\
+          xcopy /E /I frontend\build\* release\difyserver\frontend\build\
+          copy config.yaml release\difyserver\config.yaml
+          powershell Compress-Archive -Path release\difyserver -DestinationPath release\difyserver-windows-amd64.zip
           
       - name: Create Release
         uses: softprops/action-gh-release@v1
@@ -85,11 +85,11 @@ jobs:
 
       - name: Create release package
         run: |
-          mkdir -p release/difyserver
+          mkdir -p release/difyserver/frontend/build
           cp difyserver release/difyserver/
-          cp -r frontend/build release/difyserver/frontend/build
+          cp -r frontend/build/* release/difyserver/frontend/build/
           cp config.yaml release/difyserver/config.yaml
-          cd release/difyserver && tar -czf difyserver-linux-amd64.tar.gz *
+          cd release && tar -czf difyserver-linux-amd64.tar.gz *
           
       - name: Create Release
         uses: softprops/action-gh-release@v1
